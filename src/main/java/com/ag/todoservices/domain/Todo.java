@@ -12,6 +12,12 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.beans.factory.annotation.Value;
+
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonView;
 
 
 /**
@@ -24,13 +30,13 @@ public class Todo extends BaseEntity {
 
 	//0 - Variables Declaration
 	@Size(min=1, max=50, message="Must be between 1 and 50 chars long")
-	public String  text;
-	
-	public boolean isCompleted = false;
+	String  text;
+
+	Boolean isCompleted;
 	
 	@CreationTimestamp
 	@Column(name = "createdAt", nullable = false, updatable = false)
-	public Date createdAt;
+	Date createdAt;
 	
 	//1 - Getters and Setters
 	public Date getCreatedAt() {
@@ -39,11 +45,12 @@ public class Todo extends BaseEntity {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	public boolean getIsCompleted() {
-		return isCompleted;
+	public Boolean getIsCompleted() {
+		return this.isCompleted;
 	}
-	public void setIsCompleted(boolean isCompleted) {
-		this.isCompleted = isCompleted;
+	public Todo setIsCompleted(Boolean isCompleted) {		
+		this.isCompleted = isCompleted == null? Boolean.FALSE : isCompleted;
+		return this;
 	}
 	public String getText() {
 		return text;

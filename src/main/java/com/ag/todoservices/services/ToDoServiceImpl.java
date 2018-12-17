@@ -5,10 +5,7 @@
 package com.ag.todoservices.services;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.stereotype.Service;
-
 import com.ag.todoservices.domain.Todo;
 import com.ag.todoservices.exception.ResourceNotFoundException;
 import com.ag.todoservices.repository.TodoRepository;
@@ -51,13 +48,24 @@ public class ToDoServiceImpl implements ToDoService {
  	*/
 	@Override
 	public Todo saveTodo(Todo todo) {
-		return todoRepository.save(todo);
+		return todoRepository.save(convert(todo));
 	}
 
 	@Override
-	public Todo updateTodo(Long todoId, Todo todo){
-		Todo existingTodo = getValidTodo(todoId);		
-		return todoRepository.save(mapValues(existingTodo, todo));		
+	public Todo updateTodo(Long todoId, Todo inputTodo){
+        return todoRepository.findById(todoId).map(todo -> {
+
+            if(inputTodo.getText() != null){
+            	todo.setText(inputTodo.getText());
+            }
+
+            if(inputTodo.getIsCompleted() != null){
+            	todo.setIsCompleted(inputTodo.getIsCompleted());
+            }
+
+            return todoRepository.save(todo);
+
+        }).orElseThrow(() -> new ResourceNotFoundException("Item with "+ todoId + " not found"));
 	}
 
 	
@@ -77,26 +85,10 @@ public class ToDoServiceImpl implements ToDoService {
 	 * @return
 	 */
 	private Todo getValidTodo(Long todoId) {
+		return todoRepository.findById(todoId).orElseThrow(() -> new ResourceNotFoundException("Item with "+ todoId + " not found"));		
+	}	
 
-		Optional<Todo> todoOptional = todoRepository.findById(todoId);
-		if(!todoOptional.isPresent()) {
-			throw new ResourceNotFoundException("Item with "+ todoId.toString() + " not found");
-		}
-		return todoOptional.get();
+	private Todo convert(Todo todo) {
+		return todo.setIsCompleted(todo.getIsCompleted());
 	}
-	
-	private Todo mapValues(Todo existingTodo, Todo newTodo) {
-		if(!isNullOrEmpty(newTodo.getText())) {
-			existingTodo.setText(newTodo.getText());
-		}
-		if(newTodo.getIsCompleted() != existingTodo.getIsCompleted()) {
-			existingTodo.setIsCompleted(newTodo.getIsCompleted());
-		}
-		return existingTodo;
-	}
-	
-    private boolean isNullOrEmpty(String str) {
-		return str == null || str.trim().length() == 0 || "null".equalsIgnoreCase(str.trim());
-	}
-
 }

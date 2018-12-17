@@ -19,6 +19,7 @@ import com.ag.todoservices.domain.Task;
  */
 
 @Service
+@SuppressWarnings("serial")
 public class TaskServiceImpl implements TaskService {
 	
 	public TaskServiceImpl() {}
@@ -56,7 +57,7 @@ public class TaskServiceImpl implements TaskService {
 	 * @return boolean true if the string is balanced.
 	 *
 	 */
-    public boolean isBalanced(String strToCheck) {
+    public boolean isBalanced(final String strToCheck) {
 		//0- Declarations
         Deque<Character> openBraceStack = new ArrayDeque<Character>();        
         int strLength = strToCheck.length();
