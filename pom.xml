@@ -8,11 +8,11 @@
 		<version>2.1.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ag</groupId>
-	<artifactId>todo-services</artifactId>
+	<groupId>com.ag.assignment</groupId>
+	<artifactId>todo-task-services</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>todo-services</name>
-	<description>Todo services implementation</description>
+	<name>todo-task-services</name>
+	<description>Todo task services implementation</description>
 
 	<properties>
 		<java.version>1.8</java.version>
