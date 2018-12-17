@@ -1,8 +1,4 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
-package com.ag.todoservices.restcontroller.exception;
+package com.ag.todoservices.controllers.exception;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,9 +24,7 @@ import com.ag.todoservices.exception.TodoErrors;
 import com.ag.todoservices.exception.TodoFieldError;
 
 /**
- * This class acts as a global exception handler for all ToDo and Task services
- * @author Mohan AMILINENI
- *
+ * Created by AMK on 17/12/18.
  */
 @RestControllerAdvice
 public class TodoServicesControllerExceptionHandler extends ResponseEntityExceptionHandler {

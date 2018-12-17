@@ -1,4 +1,4 @@
-package com.ag.todoservices.restcontroller;
+package com.ag.todoservices.controllers.v0;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.mockito.Mockito.times;
@@ -19,9 +19,14 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.ag.todoservices.restcontroller.exception.TodoServicesControllerExceptionHandler;
 import com.ag.todoservices.services.TaskService;
+import com.ag.todoservices.controllers.exception.TodoServicesControllerExceptionHandler;
+import com.ag.todoservices.controllers.v0.TaskController;
 import com.ag.todoservices.domain.Task;
+
+/**
+ * Created by AMK on 17/12/18.
+ */
 
 public class TaskControllerTest {
 
@@ -33,7 +38,6 @@ public class TaskControllerTest {
     
 	@Rule
 	public ExpectedException thrown;
-
 	
     MockMvc mockMvc;
     
@@ -56,7 +60,6 @@ public class TaskControllerTest {
         Task task= new Task();
         task.setInput("[]");
         task.setIsBalanced(true);
-
        
 		//When
         when(taskService.validateBrackets(task)).thenReturn(task);

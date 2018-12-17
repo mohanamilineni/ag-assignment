@@ -1,7 +1,3 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
 package com.ag.todoservices.domain;
 
 import javax.persistence.Entity;
@@ -12,11 +8,9 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
- * Bracket Task model which contains text and isBalanced information
- * 
- * @author Mohan AMILINENI
- *
+ * Created by AMK on 17/12/18.
  */
+@SuppressWarnings("serial")
 @Component
 @Entity
 @JsonIgnoreProperties({"id"})

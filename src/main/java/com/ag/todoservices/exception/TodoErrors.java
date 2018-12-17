@@ -1,15 +1,9 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
 package com.ag.todoservices.exception;
 
 import java.util.List;
 
 /**
- * This class acts as a aggregator model for Todo errors
- * @author Mohan AMILINENI
- *
+ * Created by AMK on 17/12/18.
  */
 public class TodoErrors {
 	

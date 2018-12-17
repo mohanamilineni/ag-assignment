@@ -1,8 +1,10 @@
-package com.ag.todoservices.restcontroller;
+package com.ag.todoservices.controllers.v0;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
+/**
+ * Created by AMK on 17/12/18.
+ */
 public abstract class AbstractRestControllerTest {
 
     public static String asJsonString(final Object obj) {

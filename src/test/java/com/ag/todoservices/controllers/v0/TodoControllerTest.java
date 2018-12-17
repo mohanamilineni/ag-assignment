@@ -1,4 +1,4 @@
-package com.ag.todoservices.restcontroller;
+package com.ag.todoservices.controllers.v0;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
@@ -24,10 +24,14 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.ag.todoservices.restcontroller.exception.TodoServicesControllerExceptionHandler;
 import com.ag.todoservices.services.ToDoService;
+import com.ag.todoservices.controllers.exception.TodoServicesControllerExceptionHandler;
+import com.ag.todoservices.controllers.v0.TodoController;
 import com.ag.todoservices.domain.Todo;
 
+/**
+ * Created by AMK on 17/12/18.
+ */
 public class TodoControllerTest extends AbstractRestControllerTest {
 
 	@Mock

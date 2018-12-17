@@ -1,7 +1,3 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
 package com.ag.todoservices.services;
 
 
@@ -9,9 +5,7 @@ import com.ag.todoservices.domain.Task;
 
 
 /**
- * This class acts as an interface for task Services 
- * @author Mohan AMILINENI
- *
+ * Created by AMK on 17/12/18.
  */
 public interface TaskService {
 	

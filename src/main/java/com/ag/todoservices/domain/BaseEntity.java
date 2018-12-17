@@ -1,7 +1,3 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
 package com.ag.todoservices.domain;
 
 import java.io.Serializable;
@@ -13,9 +9,7 @@ import javax.persistence.MappedSuperclass;
 
 
 /**
- * This class acts as a super class for all Todo related Entities.. 
- * @author Mohan AMILINENI
- *
+ * Created by AMK on 17/12/18.
  */
 @SuppressWarnings("serial")
 @MappedSuperclass

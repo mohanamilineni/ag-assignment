@@ -1,13 +1,7 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
 package com.ag.todoservices.exception;
 
 /**
- * This class manages individual field error for each property of ToDo
- * @author Mohan AMILINENI
- *
+ * Created by AMK on 17/12/18.
  */
 public class TodoFieldError extends TodoError {
 

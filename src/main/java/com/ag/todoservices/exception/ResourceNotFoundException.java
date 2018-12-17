@@ -1,7 +1,3 @@
-/*
- * @fullReview  Mohan AMILINENI 16/11/2018  Initial Version 
- * 
- */
 package com.ag.todoservices.exception;
 
 import org.springframework.http.HttpStatus;
@@ -9,9 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 /**
- * This class dedicated for handling Resource Not found exceptions across services. 
- * @author Mohan AMILINENI
- *
+ * Created by AMK on 17/12/18.
  */
 @SuppressWarnings("serial")
 @ResponseStatus(HttpStatus.NOT_FOUND)

@@ -1,6 +1,8 @@
 package com.ag.todoservices.services;
 
-
+/**
+ * Created by AMK on 17/12/18.
+ */
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -102,6 +104,12 @@ public class TaskServiceImplTest {
 
 		//Use case 12 - Check for isBalanced false here
 		task.setInput("{");
+		validatedTask = taskService.validateBrackets(task);
+		assertNotNull(validatedTask);
+		assertEquals(false, validatedTask.getIsBalanced());
+
+		//Use case 13 - Check for isBalanced false here
+		task.setInput("[[");
 		validatedTask = taskService.validateBrackets(task);
 		assertNotNull(validatedTask);
 		assertEquals(false, validatedTask.getIsBalanced());

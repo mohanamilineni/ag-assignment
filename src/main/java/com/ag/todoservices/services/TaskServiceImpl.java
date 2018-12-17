@@ -1,7 +1,3 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
 package com.ag.todoservices.services;
 
 import java.util.ArrayDeque;
@@ -13,9 +9,7 @@ import com.ag.todoservices.domain.Task;
 
 
 /**
- * This class acts as an implementation for Task Services and internally leverages Validator services
- * @author Mohan AMILINENI - 16/11/2018
- *
+ * Created by AMK on 17/12/18.
  */
 
 @Service
@@ -44,7 +38,7 @@ public class TaskServiceImpl implements TaskService {
 	/******************* PRIVATE APIs*************************/
 	
 	
-	final Map<Character, Character> brackets = new HashMap<Character, Character>() {{put('{', '}');put('(', ')');put('[', ']');}};    
+	private static final Map<Character, Character> brackets = new HashMap<Character, Character>() {{put('{', '}');put('(', ')');put('[', ']');}};    
 
 	/**
 	 * Evaluates input string and determines the string is balanced or not.
@@ -58,21 +52,32 @@ public class TaskServiceImpl implements TaskService {
 	 *
 	 */
     public boolean isBalanced(final String strToCheck) {
-		//0- Declarations
+		
+    	// 0 - input string must be greater than 0 length
+        if (isNullOrEmpty(strToCheck)) {
+            throw new IllegalArgumentException("Input string must not empty or null");
+        }
+        
+    	// 1 - odd number would always result in false
+        if ((strToCheck.length() % 2) != 0) {
+            return false;
+        }
+    	
+    	//3- Declarations
         Deque<Character> openBraceStack = new ArrayDeque<Character>();        
         int strLength = strToCheck.length();
         
-		//1- Iterate through list of braces given
+		//4- Iterate through list of braces given
         for (int i = 0; i < strLength; i++) {
             char currentChar = strToCheck.charAt(i);
             
-			//1.1 - if it is opening type brace, then put it inside stack
+			//4.1 - if it is opening type brace, then put it inside stack
             if (isOpenBracket(currentChar)) openBraceStack.push(currentChar);
             
-			//1.2 - if it is closing type brace, then check is this matching with corresponding closing brace of LIFO element 
+			//4.2 - if it is closing type brace, then check is this matching with corresponding closing brace of LIFO element 
             else if (isClosingBracket(currentChar) && isNotMatching(openBraceStack, currentChar)) return false;            
         }
-        //2 - if any of the braces still left over in stack, then string is not balanced.
+        //5 - if any of the braces still left over in stack, then string is not balanced.
         return openBraceStack.isEmpty();
     }
     
@@ -87,4 +92,8 @@ public class TaskServiceImpl implements TaskService {
     private boolean isOpenBracket(char currentChar) {
         return brackets.containsKey(currentChar);
     }
+    
+    private boolean isNullOrEmpty(String str) {
+		return str == null || str.trim().length() == 0 || "null".equalsIgnoreCase(str.trim());
+	}
 }

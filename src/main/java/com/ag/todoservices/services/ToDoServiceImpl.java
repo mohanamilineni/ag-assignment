@@ -1,7 +1,3 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
 package com.ag.todoservices.services;
 
 import java.util.List;
@@ -11,9 +7,7 @@ import com.ag.todoservices.exception.ResourceNotFoundException;
 import com.ag.todoservices.repository.TodoRepository;
 
 /**
- * This class acts as an implementation for Todo Services and internally leverages Todo Repository 
- * @author Mohan AMILINENI - 16/11/2018
- *
+ * Created by AMK on 17/12/18.
  */
 @Service
 public class ToDoServiceImpl implements ToDoService {

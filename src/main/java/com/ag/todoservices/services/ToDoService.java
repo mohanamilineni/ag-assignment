@@ -1,8 +1,3 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
-
 package com.ag.todoservices.services;
 
 
@@ -11,9 +6,7 @@ import java.util.List;
 import com.ag.todoservices.domain.Todo;
 
 /**
- * This class acts as an interface for todo Services 
- * @author Mohan AMILINENI
- *
+ * Created by AMK on 17/12/18.
  */
 public interface ToDoService {
 	

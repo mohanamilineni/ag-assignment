@@ -1,8 +1,4 @@
-/*
- * @fullReview  Mohan AMILINENI  16/11/2018  Initial Version 
- * 
- */
-package com.ag.todoservices.restcontroller;
+package com.ag.todoservices.controllers.v0;
 
 import java.util.List;
 import javax.validation.Valid;
@@ -21,9 +17,7 @@ import com.ag.todoservices.domain.Todo;
 import com.ag.todoservices.services.ToDoService;
 
 /**
- * This class acts as a controller gateway for all the Todo  operations 
- * @author Mohan AMILINENI
- *
+ * Created by AMK on 17/12/18.
  */
 @RestController
 @RequestMapping(TodoController.BASE_URL)
