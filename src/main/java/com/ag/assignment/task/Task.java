@@ -28,5 +28,9 @@ public class Task extends BaseEntity {
 	@Size(min=1, max=100, message="Must be between 1 and 50 chars long")
 	private String  input;
 	
-	private boolean isBalanced;			
+	private boolean isBalanced;	
+	
+	public boolean getIsBalanced() {
+		return isBalanced;
+	}
 }
