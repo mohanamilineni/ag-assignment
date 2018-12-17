@@ -21,7 +21,7 @@ public class TaskController {
 	
 	public final TaskService taskService;
 
-    public TaskController(TaskService taskService) {
+    public TaskController(final TaskService taskService) {
         this.taskService = taskService;
     }         
 	

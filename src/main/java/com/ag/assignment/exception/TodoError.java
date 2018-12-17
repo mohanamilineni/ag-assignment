@@ -9,7 +9,7 @@ public class TodoError {
 	private String message;
 
 	//1 - Constructor Declarations
-    public TodoError(String errorMessage) {
+    public TodoError(final String errorMessage) {
         this.message   = errorMessage;
     }    
 

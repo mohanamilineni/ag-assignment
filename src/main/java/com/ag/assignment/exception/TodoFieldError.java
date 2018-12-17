@@ -11,7 +11,7 @@ public class TodoFieldError extends TodoError {
 	private Object value;
 	
 	//1 - Construction Declarations
-    public TodoFieldError(String location, String field, String errorMessage, Object rejectedValue) {
+    public TodoFieldError(final String location, final String field, final String errorMessage, final Object rejectedValue) {
     	super(errorMessage);
         this.location  = location;
         this.param 	   = field;

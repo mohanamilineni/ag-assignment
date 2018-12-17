@@ -41,79 +41,79 @@ public class TaskServiceImplTest {
         task.setInput("[]");
         Task validatedTask = taskService.validateBrackets(task);
         assertNotNull(validatedTask);
-        assertEquals(true, validatedTask.getIsBalanced());
+        assertEquals(true, validatedTask.isBalanced());
                 
         //Use case 2 - Check for isBalanced false for [[]
         task.setInput("[[]");
         validatedTask = taskService.validateBrackets(task);
         assertNotNull(validatedTask);
-        assertEquals(false, validatedTask.getIsBalanced());
+        assertEquals(false, validatedTask.isBalanced());
         
         //Use case 3 - Check for isBalanced false for [[]]
         task.setInput("[[]]");
         validatedTask = taskService.validateBrackets(task);
         assertNotNull(validatedTask);
-        assertEquals(true, validatedTask.getIsBalanced());
+        assertEquals(true, validatedTask.isBalanced());
 
         //Use case 4 - Check for isBalanced true for {[()]}
         task.setInput("{[()]}");
         validatedTask = taskService.validateBrackets(task);
         assertNotNull(validatedTask);
-        assertEquals(true, validatedTask.getIsBalanced());
+        assertEquals(true, validatedTask.isBalanced());
 
         //Use case 5 - Check for isBalanced false for {[)]}
         task.setInput("{[)]}");
         validatedTask = taskService.validateBrackets(task);
         assertNotNull(validatedTask);
-        assertEquals(false, validatedTask.getIsBalanced());
+        assertEquals(false, validatedTask.isBalanced());
         
 		//Use case 6 - Check for isBalanced false for )[]}
 		task.setInput(")[]}");
 		validatedTask = taskService.validateBrackets(task);
 		assertNotNull(validatedTask);
-		assertEquals(false, validatedTask.getIsBalanced());
+		assertEquals(false, validatedTask.isBalanced());
 		
 		//Use case 7 - Check for isBalanced true for {}[]()
 		task.setInput("{}[]()");
 		validatedTask = taskService.validateBrackets(task);
 		assertNotNull(validatedTask);
-		assertEquals(true, validatedTask.getIsBalanced());
+		assertEquals(true, validatedTask.isBalanced());
 
 		//Use case 8 - Check for isBalanced false for {[()}]
 		task.setInput("{[()}]");
 		validatedTask = taskService.validateBrackets(task);
 		assertNotNull(validatedTask);
-		assertEquals(false, validatedTask.getIsBalanced());
+		assertEquals(false, validatedTask.isBalanced());
 		
 		//Use case 9 - Check for isBalanced false for {[()}]
 		task.setInput("{[()}]");
 		validatedTask = taskService.validateBrackets(task);
 		assertNotNull(validatedTask);
-		assertEquals(false, validatedTask.getIsBalanced());
+		assertEquals(false, validatedTask.isBalanced());
 
 		//Use case 10 - Check for isBalanced true here
 		task.setInput("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]");
 		validatedTask = taskService.validateBrackets(task);
 		assertNotNull(validatedTask);
-		assertEquals(true, validatedTask.getIsBalanced());
+		assertEquals(true, validatedTask.isBalanced());
 
 		//Use case 11 - Check for isBalanced false here
 		task.setInput("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]{");
 		validatedTask = taskService.validateBrackets(task);
 		assertNotNull(validatedTask);
-		assertEquals(false, validatedTask.getIsBalanced());
+		assertEquals(false, validatedTask.isBalanced());
 
 		//Use case 12 - Check for isBalanced false here
 		task.setInput("{");
 		validatedTask = taskService.validateBrackets(task);
 		assertNotNull(validatedTask);
-		assertEquals(false, validatedTask.getIsBalanced());
+		assertEquals(false, validatedTask.isBalanced());
 
 		//Use case 13 - Check for isBalanced false here
 		task.setInput("[[");
 		validatedTask = taskService.validateBrackets(task);
 		assertNotNull(validatedTask);
-		assertEquals(false, validatedTask.getIsBalanced());
+		assertEquals(false, validatedTask.isBalanced());
 
 	}
 	

@@ -18,7 +18,7 @@ public interface ToDoService {
 	* This method returns a particular Todo based on its id.
 	* @return	- Returns a Todo
 	*/
-	public Todo getTodoById(Long todoId);    
+	public Todo getTodoById(final Long todoId);    
     
    /**
  	* This method saves a particular Todo based on its input.
@@ -36,7 +36,7 @@ public interface ToDoService {
  	* This method returns a delets Todo based on its id.
  	* @return	- Returns a Todo
  	*/
-	public void deleteTodoById(Long todoId);
+	public void deleteTodoById(final Long todoId);
 
 }
 

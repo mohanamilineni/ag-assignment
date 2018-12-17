@@ -31,7 +31,7 @@ public class ToDoServiceImpl implements ToDoService {
 	* @return	- Returns a Todo
 	*/
 	@Override
-	public Todo getTodoById(Long todoId) {
+	public Todo getTodoById(final Long todoId) {
 		return getValidTodo(todoId);
 	}
 
@@ -67,7 +67,7 @@ public class ToDoServiceImpl implements ToDoService {
  	* @return	- Returns a Todo
  	*/
 	@Override
-	public void deleteTodoById(Long todoId) {
+	public void deleteTodoById(final Long todoId) {
 		todoRepository.deleteById(todoId);
 	}
 
@@ -77,7 +77,7 @@ public class ToDoServiceImpl implements ToDoService {
 	 * @param tenantId
 	 * @return
 	 */
-	private Todo getValidTodo(Long todoId) {
+	private Todo getValidTodo(final Long todoId) {
 		return todoRepository.findById(todoId).orElseThrow(() -> new ResourceNotFoundException("Item with "+ todoId + " not found"));		
 	}	
 

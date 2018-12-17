@@ -27,7 +27,7 @@ public class TodoController {
 	public static final String BASE_URL = "/api/v0/todo";	
 	private final ToDoService todoService;
 
-    public TodoController(ToDoService todoService) {
+    public TodoController(final ToDoService todoService) {
         this.todoService = todoService;
     }         
 

@@ -30,7 +30,7 @@ public class TaskServiceImpl implements TaskService {
 	 */
 	@Override
 	public Task validateBrackets(Task task) {
-		task.setIsBalanced(isBalanced(task.getInput().trim()));	
+		task.setBalanced(isBalanced(task.getInput().trim()));	
 		return task;
 	}
 
@@ -87,7 +87,4 @@ public class TaskServiceImpl implements TaskService {
         return brackets.containsKey(currentChar);
     }
     
-    private boolean isNullOrEmpty(String str) {
-		return str == null || str.trim().length() == 0 || "null".equalsIgnoreCase(str.trim());
-	}
 }

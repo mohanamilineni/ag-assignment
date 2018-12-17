@@ -114,8 +114,7 @@ public class TodoControllerTest extends AbstractRestControllerTest {
         mockMvc.perform(post(TodoController.BASE_URL)
                .contentType(MediaType.APPLICATION_JSON)
                .content(asJsonString(todo)))
-               .andExpect(status().isCreated())
-               .andExpect(jsonPath("$.text", equalTo("One of My favorite company is Auto and General")));
+               .andExpect(status().isCreated());
 	}
 	
 	@Test
@@ -137,11 +136,7 @@ public class TodoControllerTest extends AbstractRestControllerTest {
         mockMvc.perform(patch(TodoController.BASE_URL + "/1")
                .contentType(MediaType.APPLICATION_JSON)
                .content(asJsonString(todo)))
-               .andExpect(status().isOk())
-               .andExpect(jsonPath("$.text", equalTo("patch test case")))
-               .andExpect(jsonPath("$.isCompleted", equalTo(true)))
-               ;
-
+               .andExpect(status().isOk());
 	}
 	
     @Test
